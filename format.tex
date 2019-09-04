@@ -1,0 +1,74 @@
+\documentclass[fontsize=11pt,a4paper,captions=tableheading]{scrartcl} %article
+%font size, paper size, line spacing
+
+%Packages:
+\usepackage{acronym}					%acronyms
+\usepackage{amsmath} 					%math environment
+\usepackage[ngerman]{babel} 			%german orthography
+\usepackage{booktabs} 					%nice tables
+\usepackage{color}						%cusomize colors
+\usepackage{dsfont}						%for \mathds{} font
+\usepackage{float}						%positioning figures
+\usepackage{framed}						%frames
+\usepackage{geometry}					%setup page geometry
+\usepackage{graphicx} 					%insert images
+\usepackage[utf8]{inputenc} 			%UTF8-encoding
+\usepackage{csquotes} 					%quotes
+\usepackage{lastpage}					%reference to last page
+\usepackage{lipsum}						%adding Lorem Ipsum
+\usepackage{listings}					%code in text
+\usepackage{lmodern} 					%vector fonts
+\usepackage{marvosym} 					%special characters
+\usepackage{microtype} 					%nice typesetting
+\usepackage{multicol}					%columns in text
+\usepackage{pdfpages}					%insert pdf files
+\usepackage{perpage} 					%do for every page
+\usepackage[automark]{scrpage2}			%adjust page layout
+\usepackage{setspace}					%line spacing
+\usepackage{textcomp} 					%fonts
+\usepackage[hyphens]{url}				%line breaks in urls
+\usepackage{wrapfig} 					%text wrapping
+
+\usepackage[hidelinks]{hyperref} 					%Hyperlinks, always import laster, no red border
+\usepackage[nonumberlist,nopostdot]{glossaries}		%glossary, import even laster
+
+\DeclareUnicodeCharacter{20AC}{\EUR} 	%euro sign
+\MakePerPage{footnote} 					%footnotes for each page
+
+%***** page layout ****************************************************************************************************************%
+
+\geometry{ a4paper, 
+	top=22mm, 
+	left=20mm, 
+	right=20mm, 
+	bottom=20mm, 
+	headsep=8mm, 
+	footskip=13mm }
+	
+
+%***** page numbering and header **************************************************************************************************%
+
+\pagestyle{scrheadings}										%activate adjustable layout
+\clearscrheadings 											%clear default settings
+\setheadsepline{1pt}										%line in header
+\rohead{Title}							                    %print at top right
+\lohead{Institute}						                    %print at top left
+\setlength\parindent{0pt}									%no indent for new paragraphs	
+
+\addto\captionsngerman{\renewcommand{\figurename}{Figure}}	%rename figures
+\addto\captionsngerman{\renewcommand{\tablename}{Table}}	%rename tables
+
+%***** beginning of the document **************************************************************************************************%
+
+\begin{document}	 	%actual beginning
+\begin{spacing}{1.0} 	%adjust line spacing
+\shorthandoff{"}	 	%no umlauts with "A 
+
+%***** main part ******************************************************************************************************************%
+
+\include{content}
+
+%***** end of the document ********************************************************************************************************%
+\shorthandon{"}
+\end{spacing}
+\end{document}
